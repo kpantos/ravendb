@@ -14,7 +14,8 @@ namespace Raven.Tests.Bugs
 		[Fact]
 		public void AddEntity()
 		{
-			using (var store = NewDocumentStore())
+            //Please use a normal running database and not the ones contained in the Base Class
+			using (var store = new DocumentStore())
 			{
 				store.Conventions.FindIdentityPropertyNameFromEntityName = typeName => "ID";
 				store.Conventions.FindIdentityProperty = prop => prop.Name == "ID";
